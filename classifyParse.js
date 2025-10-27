@@ -59,6 +59,7 @@ const locations = doc.places().out('array');
 // const duration = doc.match('#Duration').out('array');
 const activities = doc.verbs().out('array');
 
+// Listing multiple activities from the array
 if (activities.length > 0) {
     console.log('Activites: ', activities.join(', '));
 
@@ -76,3 +77,4 @@ res.json({
 
 let port = 3000;
 app.listen(3000, () => {console.log(`Listening on port ${port}...`)});
+
