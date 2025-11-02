@@ -1,4 +1,4 @@
-// Made with flutterflow, lines 195 to 228 as api connections were edited manually in this file and 415 to 419
+// UI Made with flutterflow, lines 195 to 228 as api connections were edited manually in this file and 415 to 419
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
