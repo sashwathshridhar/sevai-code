@@ -2,4 +2,6 @@ This folder contains the code for how the app Sevai processes and classifies inf
 
 calculate.js is simple functionality for calculating dates that we are trying to make more flexible.
 
-classifyParse.js includes full Natural Language Processing code that is built on chrono-node, compromise, and luxon for the date and time calculations done in calculate.js. This is a smaller version of the full processing code which uses Naive Bayes classification, which we are trying to improve upon.
+classifyParse.js includes full Natural Language Processing code that is built on chrono-node, compromise, luxon, and more for the date and time calculations done in calculate.js. This is a smaller version of the full processing code which uses Naive Bayes classification, which we are trying to improve upon. As of now, this is functioning fully but we are working on a version that users NER.
+
+To run the code, download the files and run them binding to an open port. After this, the API should be accessible through POST requests (can be tested using `curl.exe` or similar).
