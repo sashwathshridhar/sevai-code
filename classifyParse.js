@@ -18,12 +18,14 @@ let duration = 'Not Available';
 const doc = nlp(sentence);
 const times = chnode.parse(sentence);
 
+// Time Formatting
 const format = 'h:mm a'
 
+//First element from times array (best prediction)
 if (times.length > 0) {
     const startParsed = times[0].start ? times[0].start.date() : null;
     const endParsed = times[0].end ? times[0].end.date() : null;
-
+// Converting timestamp to format
     if (startParsed) {
         startTime = startParsed ? DateTime.fromJSDate(startParsed).toFormat(format) : 'Not Available';
     }
@@ -36,10 +38,10 @@ if (times.length > 0) {
     if (end < start) {
         end = end.plus({days: 1});
     }
-
+// Formatting duration variable
     let duration = end.diff(start, ['hours', 'minutes', 'seconds']);
     let { hours, minutes, seconds } = duration.toObject();
-
+// Printing duration values
     durationStrFmt = `${Math.floor(Math.abs(hours))}h. ${Math.floor(Math.abs(minutes))}m. ${Math.floor(Math.abs(seconds))}s.`;
 
     console.log('Start Time: ', startTime);
@@ -48,6 +50,7 @@ if (times.length > 0) {
     console.log('End Date: ', endParsed);
     console.log('Duration: ', durationStrFmt);
 }
+// Handling unfound times
 else if (times.length === 0) {
     const startParsed = times[0].start ? times[0].start.date() : null;
 
@@ -56,7 +59,6 @@ else if (times.length === 0) {
     let duration = 'Not Available';
 };
 const locations = doc.places().out('array');
-// const duration = doc.match('#Duration').out('array');
 const activities = doc.verbs().out('array');
 
 // Listing multiple activities from the array
@@ -64,7 +66,7 @@ if (activities.length > 0) {
     console.log('Activites: ', activities.join(', '));
 
 }
-
+// Printing response JSON
 res.json({    
     Activities: activities.join(', ') || 'None',
     Locations: locations.join(', ') || 'None',
@@ -74,7 +76,8 @@ res.json({
 });
 
 });
-
+// Sample port
 let port = 3000;
 app.listen(3000, () => {console.log(`Listening on port ${port}...`)});
+
 
