@@ -1,4 +1,4 @@
-// This is the UI made in FlutterFlow
+// This is the Login and Signup UI made in FlutterFlow
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
