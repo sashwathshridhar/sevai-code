@@ -1,5 +1,5 @@
 name: sevai
-description: Sevai is an app that simplifies volunteer work-tracking and management.
+description: Project information for Sevai, an app that simplifies volunteer work-tracking and management.
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
